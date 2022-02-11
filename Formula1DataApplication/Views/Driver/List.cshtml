@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Formula1DataApplication.Models.DriverDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Driver/New">New Driver</a>
+
+@foreach (var driver in Model)
+{
+    <h2><a href="/Driver/Details/@driver.DriverID">@driver.DriverFirstName @driver.DriverLastName</a></h2>
+    <div>Driver Number: @driver.DriverNumber </div>
+    <div>Driver Points: @driver.DriverPoints</div>
+    <div>Driver Country: @driver.DriverCountry</div>
+    <div>Team: @driver.TeamName</div>
+
+}

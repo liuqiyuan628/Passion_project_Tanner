@@ -1,0 +1,14 @@
+﻿@model Formula1DataApplication.Models.DriverDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="/Driver/List">Go back to list</a>
+<h2>@Model.DriverFirstName @Model.DriverLastName</h2>
+<div>DriverNumber: @Model.DriverNumber </div>
+<div>DriverPoints: @Model.DriverPoints</div>
+<div>DriverCountry: @Model.DriverCountry</div>
+<div>Team: @Model.TeamName</div>
+
+

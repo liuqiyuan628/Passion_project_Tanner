@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Create Driver</h2>
+<form action="/Driver/Create" method="POST">
+    <div>
+        <label>Driver First Name:</label> <input type="text" name="DriverFirstName" />
+    </div>
+    <div>
+        <label>Driver Last Name:</label> <input type="text" name="DriverLastName" />
+    </div>
+
+    <div>
+        <label>Driver Number:</label> <input type="number" name="DriverNumber" />
+    </div>
+
+    <div>
+        <label>Driver Points:</label> <input type="number" step=".01" name="DriverPoints" />
+    </div>
+
+    <div>
+        <label>Driver Country:</label> <input type="text" name="DriverCountry" />
+    </div>
+
+    <div>
+        <label>Team ID:</label> <input type="number" name="TeamID" />
+    </div>
+    <div>
+        <input type="submit" value="Add Driver" />
+
+    </div>
+</form>
