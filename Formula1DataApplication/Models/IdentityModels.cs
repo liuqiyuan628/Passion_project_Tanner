@@ -28,11 +28,13 @@ namespace Formula1DataApplication.Models
         // add  entities to system
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Sponsor> Sponsors { get; set; }
 
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
     }
 }

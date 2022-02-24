@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Formula1DataApplication.Models.SponsorDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2 style="color:#ab2020; margin:1em 0">Sponsors List</h2>
+<a href="/Sponsor/New">> Add New Sponsor <</a>
+@foreach (var Sponsor in Model)
+{
+    <h2><a href="/Sponsor/Details/@Sponsor.SponsorID">@Sponsor.SponsorName</a></h2>
+}

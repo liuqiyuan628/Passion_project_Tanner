@@ -1,0 +1,21 @@
+﻿@model Formula1DataApplication.Models.SponsorDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Sponsor</h2>
+<form action="/Sponsor/Update/@Model.SponsorID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Sponsor ID *@
+        <input type="text" name="SponsorID" value="@Model.SponsorID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="SponsorName" value="@Model.SponsorName" />
+    </div>
+
+
+    <div>
+        <input type="submit" value="Update Sponsor" />
+
+    </div>
+</form>

@@ -13,8 +13,15 @@ namespace Formula1DataApplication.Models
         public int SponsorID { get; set; }
         public string SponsorName { get; set; }
 
+
         //A Sponsor can support many drivers
         public ICollection<Driver> Drivers { get; set; }
 
+    }
+
+    public class SponsorDto
+    {
+        public int SponsorID { get; set; }
+        public string SponsorName { get; set; }
     }
 }

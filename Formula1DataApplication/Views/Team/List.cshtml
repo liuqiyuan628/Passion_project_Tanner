@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Formula1DataApplication.Models.TeamDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2 style="color:#ab2020; margin:1em 0">Team List</h2style="color:#ab2020;>
+    <br />
+<a href="/Team/New" style="font-size:14px; ">> Add New Team <</a>
+@foreach (var Team in Model)
+{
+    <h2><a href="/Team/Details/@Team.TeamID">@Team.TeamName</a></h2>
+    <div>Country: @Team.TeamCountry</div>
+    <div>Year: @Team.TeamYear</div>
+
+
+}

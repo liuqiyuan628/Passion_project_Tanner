@@ -1,0 +1,25 @@
+﻿@model Formula1DataApplication.Models.ViewModels.DetailsSponsor
+@{
+    ViewBag.Title = "Details";
+}
+<div style="margin: 1.3em 0;">
+
+    <a href="/Sponsor/List">> Go back to list</a>
+    <br />
+    <a href="/Sponsor/Edit/@Model.SelectedSponsor.SponsorID">> Update</a>
+    <br />
+    <a style="color:#ab2020;" href="/Sponsor/DeleteConfirm/@Model.SelectedSponsor.SponsorID">> Delete</a>
+  </div>
+    <h2>@Model.SelectedSponsor.SponsorName</h2>
+
+
+
+
+    <div>
+        <h3>Responsible for:</h3>
+        @foreach (var driver in Model.KeptDrivers)
+        {
+            <a href="/Driver/Details/@driver.DriverID">@driver.DriverFirstName @driver.DriverLastName</a><br />
+
+        }
+    </div>

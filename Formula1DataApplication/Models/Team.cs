@@ -16,4 +16,14 @@ namespace Formula1DataApplication.Models
         public int TeamYear { get; set; }
 
     }
+
+    public class TeamDto
+    {
+        public int TeamID { get; set; }
+        public string TeamName { get; set; }
+        public string TeamCountry { get; set; }
+        public int TeamYear { get; set; }
+
+
+    }
 }

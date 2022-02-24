@@ -1,14 +1,49 @@
-﻿@model Formula1DataApplication.Models.DriverDto
+﻿@model Formula1DataApplication.Models.ViewModels.DetailsDriver
 
 @{
     ViewBag.Title = "Details";
 }
 
-<a href="/Driver/List">Go back to list</a>
-<h2>@Model.DriverFirstName @Model.DriverLastName</h2>
-<div>DriverNumber: @Model.DriverNumber </div>
-<div>DriverPoints: @Model.DriverPoints</div>
-<div>DriverCountry: @Model.DriverCountry</div>
-<div>Team: @Model.TeamName</div>
+<div style="margin: 1.3em 0;">
+    <a href="/Driver/List">> Go back to list</a>
+    <br />
+    <a href="/Driver/Edit/@Model.SelectedDriver.DriverID">> Update</a>
+    <br />
+    <a style="color:#ab2020;" href="/Driver/DeleteConfirm/@Model.SelectedDriver.DriverID">> Delete</a>
+</div>
+<h2>@Model.SelectedDriver.DriverFirstName @Model.SelectedDriver.DriverLastName</h2>
+<div>DriverNumber: @Model.SelectedDriver.DriverNumber </div>
+<div>DriverPoints: @Model.SelectedDriver.DriverPoints</div>
+<div>DriverCountry: @Model.SelectedDriver.DriverCountry</div>
+<div>Team: @Model.SelectedDriver.TeamName</div>
+
+
+
+<div>
+    <h2>Sponsors for @Model.SelectedDriver.DriverFirstName @Model.SelectedDriver.DriverLastName:</h2>
+    @foreach (var sponsor in Model.ResponsibleSponsors)
+    {
+
+        <a href="/Sponsor/Details/@sponsor.SponsorID">@sponsor.SponsorName</a> <a style="color:#ab2020;" href="/Driver/Unassociate/@Model.SelectedDriver.DriverID?SponsorID=@sponsor.SponsorID">[x]</a><br />
+    }
+
+    <div>
+        <h4>Add new Sponsor to @Model.SelectedDriver.DriverFirstName@Model.SelectedDriver.DriverLastName</h4>
+        <form method="POST" action="/Driver/Associate/@Model.SelectedDriver.DriverID">
+            <select name="SponsorID">
+                @foreach (var sponsor in Model.AvailableSponsors)
+                {
+                    <option value="@sponsor.SponsorID">@sponsor.SponsorName</option>
+                }
+
+            </select>
+            <br />
+            <br />
+            <input type="submit" value="Associate Sponsor" />
+        </form>
+    </div>
+</div>
+
+
 
 

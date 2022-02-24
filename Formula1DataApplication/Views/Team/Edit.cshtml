@@ -1,0 +1,25 @@
+﻿@model Formula1DataApplication.Models.TeamDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Team</h2>
+<form action="/Team/Update/@Model.TeamID" method="POST">
+    <div style="display:none;">
+        @* Pass through the Team ID *@
+        <input type="text" name="TeamID" value="@Model.TeamID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="TeamName" value="@Model.TeamName" />
+    </div>
+    <div>
+        <label>Country:</label> <input type="text" name="TeamName" value="@Model.TeamCountry" />
+    </div>
+    <div>
+        <label>Year:</label> <input type="number" name="TeamName" value="@Model.TeamYear" />
+    </div>
+    <div>
+        <input type="submit" value="Update Team" />
+
+    </div>
+</form>

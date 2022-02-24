@@ -1,0 +1,46 @@
+﻿@model Formula1DataApplication.Models.ViewModels.UpdateDriver
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Driver</h2>
+<form action="/Driver/Update/@Model.SelectedDriver.DriverID" method="POST">
+    <div style="display:none;">
+        @* Pass through the driver ID *@
+        <input type="text" name="DriverID" value="@Model.SelectedDriver.DriverID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="DriverName" value="@Model.SelectedDriver.DriverFirstName @Model.SelectedDriver.DriverLastName" />
+    </div>
+    <div>
+        <label>Point:</label> <input type="number" name="DriverPoint" value="@Model.SelectedDriver.DriverPoints" />
+    </div>
+    <div>
+        <label>Number :</label> <input type="number" name="DriverNumber" value="@Model.SelectedDriver.DriverNumber" />
+    </div>
+    <div>
+        <label>Country :</label> <input type="text" name="DriverCountry" value="@Model.SelectedDriver.DriverCountry" />
+    </div>
+
+    <div>
+        <label>Team:</label>
+
+        <select name="TeamID">
+            @foreach (var team in Model.TeamOptions)
+            {
+                string selected = "";
+                if (team.TeamID == Model.SelectedDriver.TeamID)
+                {
+                    selected = "selected";
+                }
+                <option value="@team.TeamID" @selected>@team.TeamName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update Driver" />
+
+    </div>
+</form>

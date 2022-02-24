@@ -1,0 +1,27 @@
+﻿@model Formula1DataApplication.Models.ViewModels.DetailsTeam
+@{
+    ViewBag.Title = "Details";
+}
+<div style="margin: 1.3em 0;">
+
+    <a href="/Team/List">> Go back to list</a>
+    <br />
+    <a href="/Team/Edit/@Model.SelectedTeam.TeamID">> Update</a>
+    <br />
+    <a style="color:#ab2020;" href="/Team/DeleteConfirm/@Model.SelectedTeam.TeamID">> Delete</a>
+    </div>
+    <h2>@Model.SelectedTeam.TeamName</h2>
+    <div>Country: @Model.SelectedTeam.TeamCountry</div>
+    <div>Year: @Model.SelectedTeam.TeamYear</div>
+
+
+
+    <div style="margin-top:100px;">
+        <h3>Drivers related to this team</h3>
+        @foreach (var driver in Model.RelatedDrivers)
+        {
+            <a href="/Driver/Details/@driver.DriverID">@driver.DriverFirstName @driver.DriverLastName</a>
+            <br />
+
+        }
+    </div>

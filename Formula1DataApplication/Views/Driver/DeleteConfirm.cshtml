@@ -1,0 +1,17 @@
+﻿@model Formula1DataApplication.Models.DriverDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this driver?</h2>
+<a href="/Driver/List">Cancel</a>
+<h2>@Model.DriverFirstName @Model.DriverLastName</h2>
+<div>Driver Number: @Model.DriverNumber kg</div>
+<div>Driver Points: @Model.DriverPoints</div>
+<div>Team: @Model.TeamName</div>
+
+<form action="/Driver/Delete/@Model.DriverID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+
+</form>

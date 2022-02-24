@@ -39,6 +39,7 @@ namespace Formula1DataApplication.Models
         public decimal DriverPoints { get; set; }
         public string DriverCountry { get; set; }
 
+        public int TeamID { get; set; }
         public string TeamName { get; set; }
 
 

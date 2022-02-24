@@ -1,0 +1,11 @@
+﻿@model Formula1DataApplication.Models.SponsorDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this Sponsor?</h2>
+<a href="/Sponsor/List">Cancel</a>
+<h3>Name: @Model.SponsorName</h3>
+<form action="/Sponsor/Delete/@Model.SponsorID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>
