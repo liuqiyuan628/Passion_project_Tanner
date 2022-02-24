@@ -1,9 +1,21 @@
-# Passion_project_Tanner
-Part1 of the passion project
+# F1 Information Application
+Version 2 of the passion project. Completed the CRUD operations for all the entities, including Driver, Team and Sponsor. As well as the association between sponsors and drivers. </br>
 
-I have done some part of my passion project based on the Youtube video listed on your ZooApplication readme file and class content. <br/> <br/>
-I've finished the basic CRUD function(like ZooApplication_2) but I am stuck on the Update and Delete function little bit now,  <br/> and I still need more time to work on the ViewModels and Relationships.
+<h3> Entities Relationship </h3> 
+</br>A driver can have MANY Sponsors but can only drive for ONE team. 
+</br>A team can have 2 or MORE drivers.
 
-I tried multiple times on ViewModels and Relationships, but I got a lot of errors from Visual Studio, and I don't know how to fix it.  <br/> <br/>
-Therefore, I start my project all over again, and that's what I have done for now.  <br/> <br/>
-I think I have to watch your Youtube Videos and lecture recordings a couple more times.  <br/>
+<h3> CRUD </h3> 
+</br> CRUD for driver,team and sponsor.
+</br>Added an API call for listing all sponsors for a particular driver
+</br>https://localhost:44359/Driver/Details/6
+</br>Added an API call for listing all drivers under a particular sponsor
+</br>https://localhost:44359/Sponsor/Details/6
+
+
+<h3> Association </h3> 
+</br> A driver can associate with one or multible sponsors, if the sponsorship end, we can unassciate the driver and the sponsor's relationship
+
+<h3> Views </h3> 
+</br> Added views to show Create, Read, Update, and Delete.
+</br> Changed some style to make the web more readble.
